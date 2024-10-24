@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Mandali&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mandali&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 200vh;
+}
+
+body {
+    font-size: 16px;
+}
+
+.backgroundInicio {
+    background-color: #009EE3;
+    width: 100%;
+    height: 50vh;
+}
+
+.tituloH3{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+}
+
+h3 span{
+    color: #345D7E;
+}
+
+.imagem, .person {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Sistema de cadastro */
+.card {
+    position: relative;
+    width: 2.5rem;
+    margin-right: 1.25rem;
+}
+
+.hover-card {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 10rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.hover-card .HVul {
+    list-style: none;
+    padding: 0.625rem;
+    margin: 0;
+    display: grid;
+}
+
+.hover-card .HVul .HVli {
+    margin-bottom: 0.625rem;
+}
+
+.hover-card .HVul .HVli .HVa {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-family: "Mandali", sans-serif;
+}
+
+.card:hover .hover-card {
+    display: block;
+}
+
+/* Sistema de rolagem */
+.containerHeader {
+    max-width: 90%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    padding: 1rem 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 500ms;
+    z-index: 10;
+}
+
+header.rolar {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem 4%;
+}
+
+header.rolar .imagem, header.rolar .person {
+    filter: invert(100%) brightness(1000%);
+}
+
+header.rolar h3{
+    display: none;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 1.25rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 535px) {
+    header ul li {
+        display: none;
+    }
+}
+
+.paragrafo {
+    font-family: "Mandali", sans-serif;
+    color: white;
+    font-size: 1.75rem;
+    padding-top: 6.25rem;
+    text-align: center;
+}
+
+.paragrafo p {
+    padding: 0 1.5rem;
+    line-height: 1.4;
+}
+
+.paragrafo p br {
+    margin-bottom: -0.625rem;
+}
+
+/*Sistema de checkout*/
+.checkout {
+    max-width: 95%;
+    height: 5rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25rem auto;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.espacamento {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Mandali", sans-serif;
+}
+
+.espacamento strong{
+    margin-bottom: -2.5rem;
+}
+
+@media (max-width: 768px) {
+    .paragrafo {
+        font-size: 1.5rem;
+        padding-top: 5rem;
+    }
+
+    .checkout {
+        width: 90%;
+    }
+}
+
+@media (max-width: 535px) {
+    .paragrafo {
+        font-size: 1.25rem;
+        padding-top: 4rem;
+    }
+
+    .checkout {
+        width: 100%;
+        height: 4rem;
+    }
+}
+
+/*Sistema de checkout funcional*/
+
+.HC{
+    display: none;
+    position: absolute;
+    border: 0.5px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-left: 10px
+}
+
+.cardCheck:hover .HC{
+    display: block;
+}
+
+.cardQuantidade {
+    width: 200px;
+    height: 140px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.inputGroup {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.pesinho {
+    font-family: "Mandali", sans-serifs;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+label {
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.meuInput {
+    width: 50px;
+    margin-left: 10px;
+}
+
+.divisao {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    border-top: solid 1px black;
+    padding: 10px;
+}
+
+.cardQuantidade:hover .inputGroup {
+    display: flex;
+}
+
+.cardPCD {
+    width: 200px;
+    height: 140px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.boxPCD {
+    margin-top: -70px;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    z-index: 1;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.checkPCD {
+    margin-left: 20px;
+}
+
+.necessidade {
+    display: grid;
+    width: 100%;
+    text-align: left;
+}
+
+.txtNecessidade {
+    width: 250px;
+    height: 100px;
+    background-color: #bebebe;
+    border: solid 1px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.cardPCD:hover .boxPCD {
+    display: flex;
+}
+
+.HVpagamentos {
+    display: none;
+    position: absolute;
+    border: 0.5px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: white;
+    width: 300px;
+    padding: 10px;
+}
+
+.cardPagamentos:hover .HVpagamentos {
+    display: block;
+}
+
+.cardOnde {
+    width: 200px;
+    height: 140px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.mapContainer {
+    display: none;
+    position: absolute;
+    margin-top: -70px;
+    border: 0.5px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 300px;
+    height: 200px;
+    background-color: #f5f5f5;
+}
+
+.cardOnde:hover .mapContainer {
+    display: block;
+}
+
+
+/*corpo do site*/
+
+.divCentral {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem auto;
+}
+
+.espaco {
+    padding: 0 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Mandali", sans-serif;
+}
+
+.tipo {
+    width: 25px;
+    height: 25px;
+    font-family: "Mandali", sans-serif;
+}
+
+/*Catalogo para alugar*/
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.whiteBox{
+    margin-top: 200px;
+    width: 900spx;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 22px 2px black;
+}
+
+.items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.item{
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product{
+    text-align: center;
+    background-color: #E9EEF2;
+    height: 220px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.item .product img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.item h3{
+    margin: 0;
+    color: #444;
+    font-size: 1.2rem;
+    margin: 10px 0px 10px 0px;
+}
+
+.item span{
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.item button{
+    background-color: #008cff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width:680px){
+    .items{
+        display: block;
+    }
+    .item{
+        margin-bottom: 20px;
+    }
+    .container{
+        height: auto;
+    }
+}
+
+/*rodape*/
+
+#footer_copyright {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+  }

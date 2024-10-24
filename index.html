@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospedagem: Gestão de acomodações</title>
+    <link rel="website icon" type="jpg" href="icones/airplane-engines.svg">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+    <div class="backgroundInicio">
+        <header id="header">
+            <div class="containerHeader">
+                <div class="flex">
+                    <a href="index.html">
+                        <h3 class="tituloH3"><span>Belem</span>Conectada</h3>
+                        <img class="imagem" src="icones/airplane-engines.svg">
+                    </a>
+                    <nav>
+                        <ul>
+                            <div class="card">
+                                <div class="img-box">
+                                    <li>
+                                        <a href="#"><img class="person" src="icones/person.svg" alt="Perfil"></a>
+                                    </li>
+                                </div>
+                                <div class="hover-card">
+                                    <ul class="HVul">
+                                        <li class="HVli"><a class="HVa" href="#">Cadastro</a></li>
+                                        <li class="HVli"><a class="HVa" href="#">Entrar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <li>
+                                <a href="#"><img class="imagem" src="icones/globe.svg"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="paragrafo">
+            <p>Encontre o ponto ideal para sua estadia de<br>
+             acordo com suas necessidades</p>
+        </div>
+
+        <div class="checkout">
+            <nav>
+                <ul>
+                    <div class="checkout2">
+                        <nav>
+                            <ul>
+                                <div class="cardOnde">
+                                    <div class="boxOnde">
+                                        <li class="espacamento"><a href="#"><strong>Onde</strong><br>Pontos de interesse</a></li>
+                                    </div>
+                                    <div class="mapContainer" id="map"></div>
+                                </div>
+                            </ul>
+                        </nav>
+                    </div>                    
+                    <div class="cardCheck">
+                        <div class="box">
+                            <li class="espacamento"><a href="#"><strong>Check-in</strong><br>Insira a data</a></li>
+                        </div>
+                        <div class="HC">
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="cardCheck">
+                        <div class="box">
+                            <li class="espacamento"><a href="#"><strong>Checkout</strong><br>Insira a data</a></li>
+                        </div>
+                        <div class="HC">
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="cardQuantidade">
+                        <div class="boxQuantidade">
+                            <li class="espacamento"><a href="#"><strong>Quartos</strong><br>Quantas pessoas?</a></li>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <p class="pesinho">Adulto</p><input type="checkbox">
+                                <input class="meuInput" type="number">
+                            </label>
+                            <label>
+                                <p class="pesinho">Crianca</p><input type="checkbox">
+                                <input class="meuInput" type="number">
+                            </label>
+                            <label>
+                                <p class="pesinho">Pet</p><input type="checkbox">
+                                <input class="meuInput" type="number">
+                            </label><br>
+                            <div class="divisao"></div>
+                            <label>
+                                <p class="pesinho">Banheiro</p><input type="checkbox">
+                                <input class="meuInput" type="number">
+                            </label>
+                            <label>
+                                <p class="pesinho">Wifi</p><input type="checkbox">
+                                <input class="meuInput" type="number">
+                            </label>
+                            <label>
+                                <p class="pesinho">Refeicoes</p><input type="checkbox">
+                                <input class="meuInput" type="number">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cardPCD">
+                        <div class="box">
+                            <li class="espacamento"><a href="#"><strong>Acessibilidade</strong><br>Ambiente adaptado</a></li>
+                        </div>
+                        <div class="boxPCD">
+                            <label>
+                                <p>Necessita de adaptação no recinto?</p>
+                                <input class="checkPCD" type="checkbox">
+                            </label><br>
+                            <label class="necessidade">
+                                <p>Descreva sua necessidade</p><br>
+                                <input class="txtNecessidade" type="text">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cardPagamentos">
+                        <div class="boxPagamentos">
+                            <li class="espacamento"><a href="#"><strong>Pagamentos</strong><br>Formas de pagamento</a></li>
+                        </div>
+                        <div class="HVpagamentos">
+                            <p>Formas de pagamento</p><br>
+                            <label><p class="metodo">Pix</p><input type="checkbox"></label>
+                            <label><p class="metodo">MasterCard</p><input type="checkbox"></label>
+                            <label><p class="metodo">Especie</p><input type="checkbox"></label>
+                        </div>
+                    </div>                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="divCentral">
+        <nav>
+            <ul>
+                <li class="espaco">
+                    <p>Casa</p>
+                    <a href="pages/casa.html"><img class="tipo" src="icones/house.svg"></a>
+                </li>
+                <li class="espaco">
+                    <p>Apartamento</p>
+                    <a href="pages/apartamento.html"><img class="tipo" src="icones/building.svg"></a>
+                </li>
+                <li class="espaco">
+                    <p>Compartilhado</p>
+                    <a href="pages/compartilhado.html"><img class="tipo" src="icones/familia.png"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="whiteBox">
+            <div class="items">
+                <div class="item">
+                    <div class="product">
+                        <img src="imagens/Sacada-gourmet-do-Villa-Celimontana-Residencial-Fontana-Construtora-1170x780.jpg">
+                    </div>
+                    <h3>Apartamento, Nazare</h3>
+                    <span>R$249,99</span>
+                    <button onclick="passagem()">Alugar</button>
+                </div>
+                <div class="item">
+                    <div class="product">
+                        <img src="imagens/images (2).jpg">
+                    </div>
+                    <h3>Casa, Pedreira</h3>
+                    <span>R$197,90</span>
+                    <button onclick="passagem()">Alugar</button>
+                </div>
+                <div class="item">
+                    <div class="product">
+                        <img src="imagens/images (1).jpg">
+                    </div>
+                    <h3>Compartilhado, Umarizal</h3>
+                    <span>R$197,90</span>
+                    <button onclick="passagem()">Alugar</button>
+                </div>
+                <div class="item">
+                    <div class="product">
+                        <img src="imagens/images.jpg">
+                    </div>
+                    <h3>Apartamento, Nazare</h3>
+                    <span>R$200,00</span>
+                    <button onclick="passagem()">Alugar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footerPrincipal">
+    <div id="footer_copyright">
+        &#169
+        2024 all rights reserved
+    </div>
+    </footer>
+    <script src="scripts/efeitoRolagem.js"></script>
+    <script src="scripts/transferencia.js"></script>
+    <script src="scripts/mapa.js"></script>
+</body>
+</html>

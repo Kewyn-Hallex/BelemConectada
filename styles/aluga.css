@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mandali&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    --bg-color:var(--bg-color) #1d2631;
+    --tex-color: #fff;
+    --main-color: #34e7f8;
+    --other-color: #fcfcfc;
+    --h1-font: 4rem;
+    --p-font: 1rem;
+}
+
+
+body{
+    color: var(--tex-color);
+}
+
+html{
+    height: 110vh;
+}
+
+.backgroundInicio {
+    background-color: #009EE3;
+    width: 100%;
+    height: 20vh;
+}
+
+.tituloH3{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.tituloH3 span{
+    color: #345D7E;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.imagem, .person {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Sistema de cadastro */
+.card {
+    position: relative;
+    width: 2.5rem;
+    margin-right: 1.25rem;
+}
+
+.hover-card {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 10rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.hover-card .HVul {
+    list-style: none;
+    padding: 0.625rem;
+    margin: 0;
+    display: grid;
+}
+
+.hover-card .HVul .HVli {
+    margin-bottom: 0.625rem;
+}
+
+.hover-card .HVul .HVli .HVa {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-family: "Mandali", sans-serif;
+}
+
+.card:hover .hover-card {
+    display: block;
+}
+
+/* Sistema de rolagem */
+.containerHeader {
+    max-width: 90%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    padding: 1rem 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 500ms;
+    z-index: 10;
+}
+
+header.rolar {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem 4%;
+}
+
+header.rolar .imagem, header.rolar .person {
+    filter: invert(100%) brightness(1000%);
+}
+
+header.rolar h3{
+    display: none;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 1.25rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 535px) {
+    header ul li {
+        display: none;
+    }
+}
+
+.paragrafo {
+    font-family: "Mandali", sans-serif;
+    color: white;
+    font-size: 1.75rem;
+    padding-top: 6.25rem;
+    text-align: center;
+}
+
+.paragrafo p {
+    padding: 0 1.5rem;
+    line-height: 1.4;
+}
+
+.paragrafo p br {
+    margin-bottom: -0.625rem;
+}
+
+
+.section{
+
+    padding: 0 15%;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-text h1{
+    font-size: var(--h1-font);
+    line-height: 1.2;
+    margin-bottom: 2px;
+    color: rgb(82, 82, 82);
+}
+
+.home-text h3{
+    color: rgb(82, 82, 82);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.home-img{
+    border-radius: 5px;
+    width: 700px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.home-img img{
+    max-width: 100%;
+    width: 28rem;
+    height: auto;
+    margin-left: 20%;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 15px 70px;
+    font-size: 16px;
+    font-weight: 500;
+    background: transparent;
+    border: solid 2px rgb(82, 82, 82);
+    border-radius: 3px;
+    transition: all.55 ease;
+    color: rgb(82, 82, 82);
+}
+
+.btn:hover{
+    transition: 300ms;
+    background-color: #008cff;
+    border: 2px solid var(--tex-color);
+    color: white;
+}
+
+.container-slider {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+  }
+  
+  .slider {
+    opacity: 0;
+    transition: opacity .2s;
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .on {
+    opacity: 1;
+  }
+  
+  #prev-button, #next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  #prev-button img{
+    transform: scaleX(-1);
+  }
+  
+  #prev-button img, #next-button img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #prev-button {
+    transform: rotate(180deg);
+  }
